@@ -21,7 +21,7 @@ class NextButton extends StatelessWidget {
           child: Text(
             currentPageIndex == 3
                 ? context.localization.welcomePageNextButtonStartText
-                : context.localization.welcomePageNextButtonStartText,
+                : context.localization.welcomePageNextButtonNextText,
           ),
         ));
   }
