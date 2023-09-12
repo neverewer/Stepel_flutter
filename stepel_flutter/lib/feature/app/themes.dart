@@ -31,44 +31,41 @@ class Themes {
   static const Color _skipButtonOverlayColorLight = Color(0xFFd8d8db);
   static const Color _skipButtonOverlayColorDark = Color(0xFF5e606c);
 
-  static SkipButtonTheme getSkipButtonTheme(bool light) {
-    return SkipButtonTheme(
-      buttonStyle: ButtonStyle(
-          backgroundColor: const MaterialStatePropertyAll(_transparentColor),
-          overlayColor: MaterialStatePropertyAll(light ? _skipButtonOverlayColorLight : _skipButtonOverlayColorDark)),
-      textStyle: TextStyle(
-        color: light ? _skipButtonTextColorLight : _skipButtonTextColorDark,
-        fontSize: _bodyFontSize,
-        decoration: TextDecoration.underline,
-      ),
-    );
-  }
+  static SkipButtonTheme getSkipButtonTheme(bool light) => SkipButtonTheme(
+        buttonStyle: ButtonStyle(
+            backgroundColor: const MaterialStatePropertyAll(_transparentColor),
+            overlayColor: MaterialStatePropertyAll(light ? _skipButtonOverlayColorLight : _skipButtonOverlayColorDark)),
+        textStyle: TextStyle(
+          color: light ? _skipButtonTextColorLight : _skipButtonTextColorDark,
+          fontSize: _bodyFontSize,
+          fontWeight: FontWeight.w500,
+          decoration: TextDecoration.underline,
+        ),
+      );
 
-  static DotIndicatorTheme getDotIndicatorTheme(bool light) {
-    return DotIndicatorTheme(
-      dotColor: light ? primaryBlueColorLightTranslucent : primaryBlueColorDarkTranslucent,
-      dotActiveColor: light ? primaryBlueColorLight : _dotIndicatorDotColorDark,
-    );
-  }
+  static DotIndicatorTheme getDotIndicatorTheme(bool light) => DotIndicatorTheme(
+        dotColor: light ? primaryBlueColorLightTranslucent : primaryBlueColorDarkTranslucent,
+        dotActiveColor: light ? primaryBlueColorLight : _dotIndicatorDotColorDark,
+      );
 
-  static TextButtonThemeData getTextButtonTheme(bool light) {
-    return TextButtonThemeData(
-        style: ButtonStyle(
-            foregroundColor: MaterialStatePropertyAll(light ? primaryBlueColorLight : _textButtonTextColorDark),
-            backgroundColor:
-                MaterialStatePropertyAll(light ? primaryBlueColorLightTranslucent : primaryBlueColorDarkTranslucent),
-            textStyle: const MaterialStatePropertyAll(TextStyle(fontSize: _bodyFontSize))));
-  }
+  static TextButtonThemeData getTextButtonTheme(bool light) => TextButtonThemeData(
+      style: ButtonStyle(
+          foregroundColor: MaterialStatePropertyAll(light ? primaryBlueColorLight : _textButtonTextColorDark),
+          backgroundColor:
+              MaterialStatePropertyAll(light ? primaryBlueColorLightTranslucent : primaryBlueColorDarkTranslucent),
+          textStyle: const MaterialStatePropertyAll(TextStyle(
+            fontSize: _bodyFontSize,
+            fontWeight: FontWeight.w500,
+          ))));
 
-  static ThemeData get(bool light) {
-    return ThemeData(
-      brightness: light ? Brightness.light : Brightness.dark,
-      scaffoldBackgroundColor: light ? _backgroundColorLight : _backgroundColorDark,
-      extensions: [
-        getSkipButtonTheme(light),
-        getDotIndicatorTheme(light),
-      ],
-      textButtonTheme: getTextButtonTheme(light),
-    );
-  }
+  static ThemeData get(bool light) => ThemeData(
+        brightness: light ? Brightness.light : Brightness.dark,
+        fontFamily: 'Roboto',
+        scaffoldBackgroundColor: light ? _backgroundColorLight : _backgroundColorDark,
+        extensions: [
+          getSkipButtonTheme(light),
+          getDotIndicatorTheme(light),
+        ],
+        textButtonTheme: getTextButtonTheme(light),
+      );
 }
