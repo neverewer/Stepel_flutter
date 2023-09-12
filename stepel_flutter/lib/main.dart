@@ -1,20 +1,14 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/router/router.dart';
+import 'package:stepel_flutter/feature/app/app.dart';
 
-void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
-}
+void main() async => runZonedGuarded(() async {
+      WidgetsFlutterBinding.ensureInitialized();
+      var router = AppRouter();
+      runApp(App(router: router));
+    }, (error, stackTrace) {
+      log('app:', error: error, stackTrace: stackTrace);
+    });
