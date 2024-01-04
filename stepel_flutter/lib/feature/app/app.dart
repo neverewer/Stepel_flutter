@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:stepel_flutter/core/router/router.dart';
-import 'package:stepel_flutter/imports.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:stepel_flutter/feature/app/themes.dart';
+import 'package:stepel_flutter/feature/dependencies/model/dependencies.dart';
+import 'package:stepel_flutter/feature/dependencies/widgets/dependencies_scope.dart';
 
 class App extends StatelessWidget {
   final AppRouter router;

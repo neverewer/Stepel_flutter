@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/core/utils/extensions/theme_extension.dart';
 
 class RejectButton extends StatelessWidget {
   const RejectButton({super.key});

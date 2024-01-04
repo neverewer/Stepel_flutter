@@ -1,4 +1,6 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/feature/widgets/cardio_label.dart';
+import 'package:stepel_flutter/feature/widgets/steps_label.dart';
 
 class ChartBottomRow extends StatelessWidget {
   const ChartBottomRow({super.key});
@@ -9,7 +11,7 @@ class ChartBottomRow extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         CardioLabel(),
-        SizedBox(width: Sizes.spacingHalf),
+        SizedBox(width: 8),
         StepsLabel(),
       ],
     );

@@ -1,4 +1,6 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/core/utils/extensions/theme_extension.dart';
 
 class PermissionsIcon extends StatelessWidget {
   const PermissionsIcon({super.key});
@@ -8,7 +10,7 @@ class PermissionsIcon extends StatelessWidget {
     var permissionIconTheme = context.theme.extension<PermissionsIconTheme>()!;
     return Icon(
       Icons.directions_run,
-      size: Sizes.permissionsPageIconSize,
+      size: 50,
       color: permissionIconTheme.color,
     );
   }

@@ -1,13 +1,14 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:stepel_flutter/core/db/daos/cardio_points_goal_dao.dart';
 import 'package:stepel_flutter/core/db/daos/steps_goal_dao.dart';
 import 'package:stepel_flutter/core/db/database.dart';
+import 'package:stepel_flutter/core/dependencies/repositories/local_storage.dart';
 import 'package:stepel_flutter/core/domain/repositories/profile_data_repository.dart';
 import 'package:stepel_flutter/core/models/profile_data_update_event.dart';
 import 'package:stepel_flutter/core/utils/date_time_utils.dart';
-import 'package:stepel_flutter/imports.dart';
 
 class ProfileDataRepositoryImpl extends IProfileDataRepository {
   final CardioPointsGoalDao cardioPointsGoalDao;

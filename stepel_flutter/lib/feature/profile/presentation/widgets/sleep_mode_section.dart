@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
 import 'package:stepel_flutter/feature/dialogs/custom_time_picker_dialog.dart';
 import 'package:stepel_flutter/feature/profile/presentation/bloc/profile_cubit.dart';
 import 'package:stepel_flutter/feature/profile/presentation/widgets/profile_info_box.dart';
-import 'package:stepel_flutter/imports.dart';
 
 class SleepModeSection extends StatelessWidget {
   final bool isActive;

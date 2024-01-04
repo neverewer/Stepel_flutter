@@ -1,10 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:stepel_flutter/feature/home/home_page.dart';
 import 'package:stepel_flutter/feature/journal/journal_page.dart';
 import 'package:stepel_flutter/feature/main/main_page.dart';
 import 'package:stepel_flutter/feature/permissions/permissions_page.dart';
 import 'package:stepel_flutter/feature/profile/profile_page.dart';
 import 'package:stepel_flutter/feature/welcome/welcome_page.dart';
-import 'package:stepel_flutter/imports.dart';
 
 part 'router.gr.dart';
 

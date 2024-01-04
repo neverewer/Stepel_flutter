@@ -1,4 +1,5 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
 /// {@template profile_state_placeholder}
 /// Entity placeholder for ProfileState

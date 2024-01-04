@@ -1,5 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
 import 'package:stepel_flutter/feature/journal/presentation/bloc/journal_cubit.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/feature/widgets/app_bar_actions.dart';
+import 'package:stepel_flutter/feature/widgets/page_title.dart';
 
 class JournalAppBar extends StatelessWidget {
   const JournalAppBar({super.key});
@@ -7,7 +11,7 @@ class JournalAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: Sizes.appBarExpendedHeight,
+      expandedHeight: 120,
       pinned: true,
       actions: [
         AppBarActions(
@@ -32,8 +36,8 @@ class JournalAppBarFlexibleSpace extends StatelessWidget {
       final isOnTop = appBarHeight <= collapsedHeight;
       return FlexibleSpaceBar(
           centerTitle: isOnTop,
-          titlePadding: EdgeInsets.only(left: Sizes.spacingFull, top: topPadding),
-          expandedTitleScale: Sizes.appBarExpandedTitleScaleFactor,
+          titlePadding: EdgeInsets.only(left: 16, top: topPadding),
+          expandedTitleScale: 2,
           title: Align(
             alignment: isOnTop ? Alignment.centerLeft : Alignment.bottomLeft,
             child: PageTitle(text: context.localization.journalPageTitle),

@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stepel_flutter/feature/profile/presentation/bloc/profile_cubit.dart';
 import 'package:stepel_flutter/feature/profile/presentation/widgets/profile_section_label.dart';
-import 'package:stepel_flutter/imports.dart';
 
 class ProfileSectionLabelSwitchable extends StatefulWidget {
   final String text;
@@ -28,7 +29,7 @@ class _ProfileSectionLabelSwitchableState extends State<ProfileSectionLabelSwitc
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: Sizes.spacingFull),
+      padding: const EdgeInsets.only(right: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

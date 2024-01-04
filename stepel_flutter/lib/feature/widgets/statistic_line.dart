@@ -1,4 +1,6 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/feature/widgets/statistic_box.dart';
 
 class StatisticLine extends StatelessWidget {
   final int calories;
@@ -18,7 +20,7 @@ class StatisticLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return axis == Axis.horizontal
         ? SizedBox(
-            width: Sizes.statisticLineWidht,
+            width: 200,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/domain/entites/fit_data_entity.dart';
 import 'package:stepel_flutter/feature/journal/presentation/widgets/journal_app_bar.dart';
 import 'package:stepel_flutter/feature/journal/presentation/widgets/journal_list_item.dart';
-import 'package:stepel_flutter/imports.dart';
 
 class JournalDataWidget extends StatelessWidget {
   final List<FitDataEntity> data;

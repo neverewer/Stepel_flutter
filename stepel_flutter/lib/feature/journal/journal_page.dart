@@ -1,6 +1,9 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stepel_flutter/feature/dependencies/widgets/dependencies_scope.dart';
 import 'package:stepel_flutter/feature/journal/journal_page_form.dart';
 import 'package:stepel_flutter/feature/journal/presentation/bloc/journal_cubit.dart';
-import 'package:stepel_flutter/imports.dart';
 
 @RoutePage()
 class JournalPage extends StatelessWidget {

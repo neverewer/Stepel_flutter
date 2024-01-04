@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
 
 class CategoryLabel extends StatelessWidget {
   final String text;
@@ -13,7 +13,7 @@ class CategoryLabel extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: Sizes.homePageCategoryLabelPadding,
+          padding: const EdgeInsets.only(left: 16),
           child: Text(
             text,
             style: const TextStyle(

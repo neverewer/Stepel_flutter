@@ -1,8 +1,9 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:stepel_flutter/feature/permissions/presentation/widgets/permissions_buttons.dart';
 import 'package:stepel_flutter/feature/permissions/presentation/widgets/permissions_icon.dart';
 import 'package:stepel_flutter/feature/permissions/presentation/widgets/permissions_sub_title.dart';
 import 'package:stepel_flutter/feature/permissions/presentation/widgets/permissions_title.dart';
-import 'package:stepel_flutter/imports.dart';
 
 @RoutePage()
 class PermissionsPage extends StatelessWidget {
@@ -12,7 +13,7 @@ class PermissionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
         body: Padding(
-      padding: Sizes.permissionsPagePadding,
+      padding: EdgeInsets.only(top: 80, right: 16, left: 16, bottom: 8),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

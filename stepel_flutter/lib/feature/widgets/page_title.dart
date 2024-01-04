@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
 
 class PageTitle extends StatelessWidget {
   final String text;

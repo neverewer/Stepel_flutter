@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/feature/app/themes.dart';
 import 'package:stepel_flutter/feature/home/presentation/widgets/custom_card.dart';
 import 'package:stepel_flutter/feature/home/presentation/widgets/weekly_bar_chart.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/feature/widgets/statistic_box.dart';
 
 class TrendCard extends StatelessWidget {
   final String topLabel;
@@ -32,7 +35,7 @@ class TrendCard extends StatelessWidget {
                 topLabel,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
-              const SizedBox(height: Sizes.spacingSmall),
+              const SizedBox(height: 4),
               Text(
                 context.localization.homePageTrendsSubTitle,
                 style: const TextStyle(

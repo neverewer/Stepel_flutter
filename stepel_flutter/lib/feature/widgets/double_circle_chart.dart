@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/core/utils/extensions/theme_extension.dart';
 
 class CircleDoubleChart extends StatelessWidget {
   final double firstValue;
@@ -45,9 +47,7 @@ class CircleDoubleChart extends StatelessWidget {
         target: secondValueTarget,
         animationEnabled: animationEnabled,
         chartWidth: chartWidth,
-        size: size != null
-            ? size! * Sizes.doubleCircleSmallChartSizeFactor
-            : Sizes.doubleCircleBigChartSize * Sizes.doubleCircleSmallChartSizeFactor,
+        size: size != null ? size! * 0.8 : 180 * 0.8,
         trackColor: doubleCircleChartTheme.secondValueTrackColor,
         progressBarColor: doubleCircleChartTheme.secondValueProgressBarColor,
       ),
@@ -88,12 +88,12 @@ class Chart extends StatelessWidget {
     return SleekCircularSlider(
       appearance: CircularSliderAppearance(
         animationEnabled: animationEnabled ?? true,
-        size: size ?? Sizes.doubleCircleBigChartSize,
-        startAngle: Sizes.doubleCircleChartStartAngle,
-        angleRange: Sizes.doubleCircleChartAngleRange,
+        size: size ?? 180,
+        startAngle: 270,
+        angleRange: 360,
         customWidths: CustomSliderWidths(
-          progressBarWidth: chartWidth ?? Sizes.doubleCircleChartWidth,
-          trackWidth: chartWidth ?? Sizes.doubleCircleChartWidth,
+          progressBarWidth: chartWidth ?? 8,
+          trackWidth: chartWidth ?? 8,
         ),
         customColors: CustomSliderColors(
           trackColor: trackColor,

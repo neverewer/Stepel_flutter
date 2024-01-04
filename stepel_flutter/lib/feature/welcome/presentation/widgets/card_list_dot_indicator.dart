@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/core/utils/extensions/theme_extension.dart';
 
 class CardListDotIndicator extends StatelessWidget {
   final PageController pageController;
@@ -20,8 +22,8 @@ class CardListDotIndicator extends StatelessWidget {
       effect: ExpandingDotsEffect(
         activeDotColor: dotIndicatorTheme.dotActiveColor,
         dotColor: dotIndicatorTheme.dotColor,
-        dotHeight: Sizes.welcomePageDotIndicatorDotSize,
-        dotWidth: Sizes.welcomePageDotIndicatorDotSize,
+        dotHeight: 10,
+        dotWidth: 10,
       ),
     );
   }

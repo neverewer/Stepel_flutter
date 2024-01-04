@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/core/utils/extensions/theme_extension.dart';
 
 class CardioLabel extends StatelessWidget {
   const CardioLabel({super.key});
@@ -10,13 +12,13 @@ class CardioLabel extends StatelessWidget {
     return Row(
       children: [
         SvgPicture.asset('assets/images/heart.svg',
-            width: Sizes.cardioLabelImageSize,
-            height: Sizes.cardioLabelImageSize,
+            width: 14,
+            height: 14,
             colorFilter: ColorFilter.mode(
               cardioLabelTheme.imageColor,
               BlendMode.srcIn,
             )),
-        const SizedBox(width: Sizes.spacingSmall),
+        const SizedBox(width: 4),
         Text(
           context.localization.cardioPointsLabelText,
           style: const TextStyle(

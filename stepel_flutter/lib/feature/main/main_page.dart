@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:stepel_flutter/core/router/router.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
 
 @RoutePage()
 class MainPage extends StatelessWidget {

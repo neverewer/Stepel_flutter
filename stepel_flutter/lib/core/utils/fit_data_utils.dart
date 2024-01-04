@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/domain/entites/fit_data_entity.dart';
 
 sealed class FitDataUtils {
   static List<FitDataEntity> completeWeaklyFitData(List<FitDataEntity> list) {

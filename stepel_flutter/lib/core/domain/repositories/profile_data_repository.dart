@@ -1,5 +1,5 @@
+import 'package:flutter/material.dart';
 import 'package:stepel_flutter/core/models/profile_data_update_event.dart';
-import 'package:stepel_flutter/imports.dart';
 
 abstract class IProfileDataRepository {
   Future<int> getStepsGoal(DateTime date);

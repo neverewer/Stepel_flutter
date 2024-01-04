@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:intl/intl.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:meta/meta.dart';
 
 @immutable
 final class FitDataEntity implements Comparable<FitDataEntity> {

@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
 
 class SettingsAppBar extends StatelessWidget implements PreferredSizeWidget {
   const SettingsAppBar({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:stepel_flutter/core/db/daos/steps_dao.dart';
+import 'package:stepel_flutter/core/domain/entites/fit_data_entity.dart';
 import 'package:stepel_flutter/core/domain/repositories/fit_data_repository.dart';
 import 'package:stepel_flutter/core/utils/fit_data_utils.dart';
-import 'package:stepel_flutter/imports.dart';
 
 class FitDataRepositoryImpl extends IFitDataRepository {
   final StepsDao stepsDao;

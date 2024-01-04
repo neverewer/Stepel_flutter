@@ -1,14 +1,20 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:stepel_flutter/core/data/repositories/fit_data_repository.dart';
+import 'package:stepel_flutter/core/data/repositories/profile_data_repository.dart';
+import 'package:stepel_flutter/core/dependencies/repositories/local_storage.dart';
 import 'package:stepel_flutter/core/domain/repositories/fit_data_repository.dart';
 import 'package:stepel_flutter/core/domain/repositories/profile_data_repository.dart';
+import 'package:stepel_flutter/core/notifications/notification_service.dart';
+import 'package:stepel_flutter/feature/dependencies/model/dependencies.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:stepel_flutter/core/db/database.dart';
 import 'package:stepel_flutter/core/pedometr/pedometr_service_background.dart';
 import 'package:stepel_flutter/core/router/router.dart';
 import 'package:stepel_flutter/feature/app/app.dart';
-import 'package:stepel_flutter/imports.dart';
 
 void main() async => runZonedGuarded(
       () async {

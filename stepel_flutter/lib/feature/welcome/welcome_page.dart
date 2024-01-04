@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:stepel_flutter/feature/welcome/presentation/widgets/card_list.dart';
 import 'package:stepel_flutter/feature/welcome/presentation/widgets/card_list_dot_indicator.dart';
 import 'package:stepel_flutter/feature/welcome/presentation/widgets/next_button.dart';
 import 'package:stepel_flutter/feature/welcome/presentation/widgets/skip_button.dart';
 import 'package:stepel_flutter/feature/welcome/presentation/widgets/welcome_card.dart';
-import 'package:stepel_flutter/imports.dart';
 
 @RoutePage()
 class WelcomePage extends StatefulWidget {
@@ -31,11 +32,9 @@ class _WelcomePageState extends State<WelcomePage> {
     super.dispose();
   }
 
-  void updateCurrentPageIndex(int index) {
-    setState(() {
-      _currentPageIndex = index;
-    });
-  }
+  void updateCurrentPageIndex(int index) => setState(() {
+        _currentPageIndex = index;
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -53,9 +52,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   onPageChanged: updateCurrentPageIndex,
                   children: _cards,
                 ),
-                const SizedBox(
-                  height: Sizes.spacingLarge,
-                ),
+                const SizedBox(height: 32),
                 CardListDotIndicator(
                   pageController: _pageController,
                   count: _cards.length,

@@ -1,7 +1,7 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stepel_flutter/core/domain/repositories/fit_data_repository.dart';
 import 'package:stepel_flutter/core/domain/repositories/profile_data_repository.dart';
 import 'package:stepel_flutter/feature/journal/presentation/bloc/journal_state.dart';
-import 'package:stepel_flutter/imports.dart';
 
 class JournalCubit extends Cubit<JournalState> {
   final IFitDataRepository fitDataRepository;

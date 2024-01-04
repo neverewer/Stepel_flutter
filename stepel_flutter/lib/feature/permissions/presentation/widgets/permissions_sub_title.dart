@@ -1,4 +1,5 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
 
 class PermissionsSubTitle extends StatelessWidget {
   const PermissionsSubTitle({super.key});

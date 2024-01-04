@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
 
 class WelcomeCard extends StatelessWidget {
   const WelcomeCard({super.key});
@@ -6,11 +6,11 @@ class WelcomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: Sizes.welcomePageCardPadding,
+      padding: EdgeInsets.symmetric(horizontal: 16),
       child: Card(
-        elevation: Sizes.welcomePageCardElevation,
+        elevation: 3,
         shape: RoundedRectangleBorder(
-          borderRadius: Sizes.borderRadius,
+          borderRadius: BorderRadius.all(Radius.circular(16)),
         ),
       ),
     );

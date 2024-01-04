@@ -1,4 +1,5 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/feature/app/themes.dart';
 
 class StatisticBox extends StatelessWidget {
   final String value;
@@ -32,9 +33,7 @@ class StatisticBox extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(
-          height: Sizes.spacingMin,
-        ),
+        const SizedBox(height: 2),
         Text(
           label,
           textAlign: TextAlign.center,

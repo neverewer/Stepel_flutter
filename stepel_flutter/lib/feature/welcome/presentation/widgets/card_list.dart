@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
 
 class CardList extends StatelessWidget {
   final PageController pageController;
@@ -15,7 +15,7 @@ class CardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Sizes.welcomePageCardListHeight,
+      height: 500,
       child: PageView(
           controller: pageController,
           physics: const BouncingScrollPhysics(),

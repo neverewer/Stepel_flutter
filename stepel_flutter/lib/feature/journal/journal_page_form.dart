@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stepel_flutter/feature/journal/presentation/bloc/journal_cubit.dart';
 import 'package:stepel_flutter/feature/journal/presentation/bloc/journal_state.dart';
 import 'package:stepel_flutter/feature/journal/presentation/widgets/journal_data_widget.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/feature/widgets/loading_widget.dart';
 
 class JournalPageForm extends StatelessWidget {
   const JournalPageForm({super.key});

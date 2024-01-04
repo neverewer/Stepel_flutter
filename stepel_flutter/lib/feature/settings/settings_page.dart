@@ -1,5 +1,5 @@
+import 'package:flutter/material.dart';
 import 'package:stepel_flutter/feature/settings/presentation/widgets/settings_app_bar.dart';
-import 'package:stepel_flutter/imports.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});

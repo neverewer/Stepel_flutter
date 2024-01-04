@@ -1,4 +1,9 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/domain/entites/fit_data_entity.dart';
+import 'package:stepel_flutter/feature/widgets/cardio_label.dart';
+import 'package:stepel_flutter/feature/widgets/double_circle_chart.dart';
+import 'package:stepel_flutter/feature/widgets/statistic_line.dart';
+import 'package:stepel_flutter/feature/widgets/steps_label.dart';
 
 class JournalListItem extends StatelessWidget {
   final FitDataEntity fitData;
@@ -11,14 +16,14 @@ class JournalListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: Sizes.journalPageListItemPadding,
+      padding: const EdgeInsets.only(bottom: 32),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           DateWidget(date: fitData.dateToString()),
-          const SizedBox(height: Sizes.spacingHalf),
+          const SizedBox(height: 8),
           const Divider(thickness: 1.5),
-          const SizedBox(height: Sizes.spacingHalf),
+          const SizedBox(height: 8),
           ItemContent(fitData: fitData),
         ],
       ),
@@ -37,7 +42,7 @@ class DateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: Sizes.journalPageListItemInnerPadding,
+      padding: const EdgeInsets.only(left: 16),
       child: Text(
         date,
         style: const TextStyle(
@@ -133,14 +138,12 @@ class ItemChartWithLabel extends StatelessWidget {
             secondValueTarget: 40,
             showLabel: true,
             animationEnabled: false,
-            chartWidth: Sizes.jorunalPageListItemChartWidth,
-            size: Sizes.journalPageListItemChartSize,
+            chartWidth: 6,
+            size: 110,
             firstValueTextSize: 22,
             secondValueTextSize: 18,
           ),
-          const SizedBox(
-            height: Sizes.spacingFull,
-          ),
+          const SizedBox(height: 16),
           const ChartBottomLabel(),
         ],
       ),

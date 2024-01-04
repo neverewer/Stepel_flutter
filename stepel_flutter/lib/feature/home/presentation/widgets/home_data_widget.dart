@@ -1,8 +1,13 @@
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/domain/entites/fit_data_entity.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/feature/app/themes.dart';
 import 'package:stepel_flutter/feature/home/presentation/widgets/category_label.dart';
 import 'package:stepel_flutter/feature/home/presentation/widgets/chart_bottom_row.dart';
 import 'package:stepel_flutter/feature/home/presentation/widgets/home_app_bar.dart';
 import 'package:stepel_flutter/feature/home/presentation/widgets/trend_card.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/feature/widgets/double_circle_chart.dart';
+import 'package:stepel_flutter/feature/widgets/statistic_line.dart';
 
 class HomeDataWidget extends StatelessWidget {
   final FitDataEntity fitData;
@@ -21,33 +26,33 @@ class HomeDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: Sizes.homePageContentPadding,
+        padding: const EdgeInsets.only(right: 8, left: 8),
         child: SingleChildScrollView(
-          padding: Sizes.homePageListBottomPadding,
+          padding: const EdgeInsets.only(bottom: 100),
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const HomeAppBar(),
-              const SizedBox(height: Sizes.spacingFull),
+              const SizedBox(height: 16),
               CircleDoubleChart(
                 firstValue: fitData.steps.toDouble(),
                 secondValue: fitData.cardioPoints.toDouble(),
                 firstValueTarget: stepsTarget.toDouble(),
                 secondValueTarget: cardioPointsTarget.toDouble(),
               ),
-              const SizedBox(height: Sizes.spacingFull),
+              const SizedBox(height: 16),
               const ChartBottomRow(),
-              const SizedBox(height: Sizes.spacingLarge),
+              const SizedBox(height: 32),
               StatisticLine(
                 calories: fitData.calories.toInt(),
                 distance: fitData.moveDistance,
                 moveTimeInMinutes: fitData.moveMinutes,
                 axis: Axis.horizontal,
               ),
-              const SizedBox(height: Sizes.spacingLarge),
+              const SizedBox(height: 32),
               CategoryLabel(text: context.localization.homePageTrendsLabel),
-              const SizedBox(height: Sizes.spacingMin),
+              const SizedBox(height: 2),
               TrendCard(
                 topLabel: context.localization.homePageCardioPointsTrendLabel,
                 value: fitData.cardioPoints,

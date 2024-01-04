@@ -1,5 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/utils/extensions/theme_extension.dart';
 
 class Themes {
   Themes._();
@@ -105,7 +106,7 @@ class Themes {
 
   static CardTheme getCardTheme(bool light) => CardTheme(
       color: light ? Colors.white : _cardDarkColor,
-      shape: const RoundedRectangleBorder(borderRadius: Sizes.borderRadius));
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))));
 
   static AppBarTheme getAppBarTheme(bool light) => AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: light ? _backgroundColorLight : _backgroundColorDark),

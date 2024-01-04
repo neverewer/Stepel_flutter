@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
-import 'package:stepel_flutter/feature/app/settings.dart';
 
 showInfoDialog(BuildContext context) {
   const Widget dialog = InfoDialog();
@@ -75,8 +74,8 @@ class NextButton extends StatelessWidget {
     currentPageIndex == 1
         ? Navigator.pop(context)
         : pageController.nextPage(
-            duration: Settings.welcomePageCardListAnamationDuration,
-            curve: Settings.welcomePageCardListCurve,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.linear,
           );
   }
 

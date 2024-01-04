@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
   final Widget child;
@@ -11,13 +11,13 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: Sizes.homePageCustomCardPadding,
+        padding: const EdgeInsets.only(top: 8, left: 2, right: 2),
         child: SizedBox(
             width: double.infinity,
-            height: Sizes.homePageCustomCardHeight,
+            height: 160,
             child: Card(
                 child: Padding(
-              padding: Sizes.homePageBoxInnerPadding,
+              padding: const EdgeInsets.all(16),
               child: child,
             ))));
   }

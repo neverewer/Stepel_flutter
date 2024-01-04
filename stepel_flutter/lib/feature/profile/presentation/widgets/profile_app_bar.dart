@@ -1,4 +1,6 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/feature/widgets/page_title.dart';
 
 class ProfileAppBar extends StatelessWidget {
   const ProfileAppBar({super.key});
@@ -6,14 +8,14 @@ class ProfileAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Sizes.appBarExpendedHeight + context.safeArea.top,
+      height: 120 + context.safeArea.top,
       child: Padding(
-        padding: const EdgeInsets.only(left: Sizes.spacingFull),
+        padding: const EdgeInsets.only(left: 16),
         child: Align(
           alignment: Alignment.bottomLeft,
           child: PageTitle(
             text: context.localization.profilePageTitle,
-            scaleFactor: Sizes.appBarExpandedTitleScaleFactor,
+            scaleFactor: 2,
           ),
         ),
       ),

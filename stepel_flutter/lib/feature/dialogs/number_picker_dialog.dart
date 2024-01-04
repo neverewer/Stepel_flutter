@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/feature/app/themes.dart';
 
 Future<int?> showNumberPickerDialog({
   required BuildContext context,

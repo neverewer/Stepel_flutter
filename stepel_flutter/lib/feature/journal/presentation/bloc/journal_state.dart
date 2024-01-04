@@ -1,4 +1,5 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:meta/meta.dart';
+import 'package:stepel_flutter/core/domain/entites/fit_data_entity.dart';
 
 /// {@template journal_state_placeholder}
 /// Entity placeholder for JournalState

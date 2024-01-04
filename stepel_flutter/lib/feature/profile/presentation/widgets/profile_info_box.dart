@@ -1,4 +1,6 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/core/utils/extensions/theme_extension.dart';
 
 class InfoBox extends StatefulWidget {
   final String label;
@@ -50,8 +52,8 @@ class _InfoBoxState extends State<InfoBox> {
               }
             : null,
         child: SizedBox(
-          height: Sizes.profilePageInfoBoxHeight,
-          width: Sizes.profilePageInfoBoxWidth,
+          height: 65,
+          width: 160,
           child: Stack(
             children: [
               InfoBoxBorder(selected: _selected, isActive: widget.isActive),

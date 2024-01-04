@@ -1,4 +1,4 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
 
 class AppBarActions extends StatelessWidget {
   final IconData icon;
@@ -15,7 +15,7 @@ class AppBarActions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding ?? Sizes.appBarActionsPadding,
+      padding: padding ?? const EdgeInsets.only(right: 8),
       child: IconButton(
         onPressed: iconCallBack,
         icon: Icon(

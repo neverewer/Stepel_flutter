@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/feature/dependencies/model/dependencies.dart';
 
 class DependenciesScope extends InheritedWidget {
   /// {@macro dependencies_scope}

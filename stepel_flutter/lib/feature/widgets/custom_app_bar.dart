@@ -1,4 +1,6 @@
-import 'package:stepel_flutter/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:stepel_flutter/core/utils/extensions/context_extension.dart';
+import 'package:stepel_flutter/feature/widgets/app_bar_actions.dart';
 
 class CustomAppBar extends StatelessWidget {
   final IconData appBarActionsIcon;

@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stepel_flutter/feature/profile/presentation/bloc/profile_cubit.dart';
 import 'package:stepel_flutter/feature/profile/presentation/bloc/profile_state.dart';
 import 'package:stepel_flutter/feature/profile/presentation/widgets/profile_data_widget.dart';
-import 'package:stepel_flutter/imports.dart';
+import 'package:stepel_flutter/feature/widgets/loading_widget.dart';
 
 class ProfilePageForm extends StatelessWidget {
   const ProfilePageForm({super.key});
