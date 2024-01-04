@@ -86,8 +86,8 @@ class NextButton extends StatelessWidget {
       onPressed: () => moveToNextPage(context),
       child: Text(
         currentPageIndex == 1
-            ? context.localization.infoPageDoneButtonText
-            : context.localization.infoPageNextButtonText,
+            ? context.localization.infoDialogDoneButtonText
+            : context.localization.infoDialogNextButtonText,
       ),
     );
   }
@@ -102,59 +102,51 @@ class InfoCard1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Text(
-          'Отслеживайте свою нагрузку со Stepel',
+        Text(
+          context.localization.infoDialogCard1Title,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
         ),
-        const SizedBox(
-          height: 25,
-        ),
+        const SizedBox(height: 25),
         SvgPicture.asset(
           'assets/images/heart.svg',
           width: 22,
           height: 22,
           colorFilter: const ColorFilter.mode(Colors.blue, BlendMode.srcIn),
         ),
-        const SizedBox(
-          height: 5,
-        ),
-        const Text(
-          'Баллы кардиотренировок',
-          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-        ),
-        const SizedBox(
-          height: 3,
-        ),
+        const SizedBox(height: 5),
         Text(
-          'Чтобы заработать баллы, больше двигайтесь',
+          context.localization.infoDialogCard1CardioPointsLabel,
+          style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+        ),
+        const SizedBox(height: 3),
+        Text(
+          context.localization.infoDialogCard1CardioPointsDescription,
           style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
         ),
-        const SizedBox(
-          height: 25,
-        ),
+        const SizedBox(height: 25),
         SvgPicture.asset(
           'assets/images/sprint.svg',
           width: 22,
           height: 22,
           colorFilter: const ColorFilter.mode(Color.fromARGB(255, 2, 173, 102), BlendMode.srcIn),
         ),
-        const SizedBox(
-          height: 5,
-        ),
-        const Text('Шаги', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500)),
-        const SizedBox(
-          height: 3,
-        ),
+        const SizedBox(height: 5),
         Text(
-          'Чтобы достичь цели, находитесь в движении',
+          context.localization.infoDialogCard1StepsLabel,
+          style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+        ),
+        const SizedBox(height: 3),
+        Text(
+          context.localization.infoDialogCard1StepsDescription,
           style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
         ),
-        const SizedBox(
-          height: 25,
+        const SizedBox(height: 25),
+        Text(
+          context.localization.infoDialogCard1Description,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
         ),
-        const Text('В приложении Stepel не только подсчитываются шаги, но и начисляются баллы кардиотренировок',
-            textAlign: TextAlign.center, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
       ],
     );
   }
@@ -168,10 +160,10 @@ class InfoCard2 extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
-          'Как зарабатывать баллы кардиотренировок',
+        Text(
+          context.localization.infoDialogCard2Title,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
         ),
         SvgPicture.asset(
           'assets/images/heart.svg',
@@ -179,10 +171,10 @@ class InfoCard2 extends StatelessWidget {
           height: 45,
           colorFilter: const ColorFilter.mode(Colors.blue, BlendMode.srcIn),
         ),
-        const Text(
-          'Получайте баллы кардиотренировок за любую активность, например ходьбу или езду на велосипеде.',
+        Text(
+          context.localization.infoDialogCard2Description,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
         ),
       ],
     );
