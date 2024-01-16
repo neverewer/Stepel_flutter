@@ -13,8 +13,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => HomeCubit(
-        fitDataRepo: DependenciesScope.of(context).fitDataRepository,
-        profileDataRepo: DependenciesScope.of(context).profileDataRepository,
+        fitDataRepository: DependenciesScope.of(context).fitDataRepository,
+        profileDataRepository: DependenciesScope.of(context).profileDataRepository,
       )..init(),
       child: const HomePageForm(),
     );

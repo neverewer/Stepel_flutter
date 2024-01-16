@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stepel_flutter/core/data/repositories/fit_data_repository.dart';
 import 'package:stepel_flutter/core/data/repositories/profile_data_repository.dart';
-import 'package:stepel_flutter/core/dependencies/repositories/local_storage.dart';
+import 'package:stepel_flutter/core/local_storage/local_storage.dart';
 import 'package:stepel_flutter/core/domain/repositories/fit_data_repository.dart';
 import 'package:stepel_flutter/core/domain/repositories/profile_data_repository.dart';
 import 'package:stepel_flutter/core/notifications/notification_service.dart';
@@ -46,10 +46,6 @@ Future<Dependencies> _createDependencies() async {
   final LocalStorage localStorage = LocalStorage(sharedPreferences: sharedPreferences);
 
   final IFitDataRepository fitDataRepository = FitDataRepositoryImpl(stepsDao: database.stepsDao);
-
-  final steps = await database.stepsDao.getAllSteps();
-
-  print(steps);
 
   final IProfileDataRepository profileDataRepository = ProfileDataRepositoryImpl(
     localStorage: localStorage,

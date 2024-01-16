@@ -6,21 +6,21 @@ import 'package:stepel_flutter/core/utils/date_time_utils.dart';
 import 'package:stepel_flutter/feature/profile/presentation/bloc/profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
-  final IProfileDataRepository profileDataRepo;
+  final IProfileDataRepository profileDataRepository;
 
   ProfileCubit({
-    required this.profileDataRepo,
+    required this.profileDataRepository,
   }) : super(const ProfileState.idle());
 
   Future<void> init() async {
     emit(const ProfileState.processing());
     final currentDate = DateTimeUtils.getCurrentFormattedDate();
 
-    var stepsTarget = await profileDataRepo.getStepsGoal(currentDate);
-    var cardioPointsTarget = await profileDataRepo.getCardioPointsGoal(currentDate);
-    var isSleepingModeActive = await profileDataRepo.getSleepingModeIsActive();
-    var wakeUpTime = await profileDataRepo.getWakeUpTime();
-    var timeToSleep = await profileDataRepo.getTimeToSleep();
+    var stepsTarget = await profileDataRepository.getStepsGoal(currentDate);
+    var cardioPointsTarget = await profileDataRepository.getCardioPointsGoal(currentDate);
+    var isSleepingModeActive = await profileDataRepository.getSleepingModeIsActive();
+    var wakeUpTime = await profileDataRepository.getWakeUpTime();
+    var timeToSleep = await profileDataRepository.getTimeToSleep();
     emit(ProfileState.successful(
       stepsTarget: stepsTarget,
       cardioPointsTarget: cardioPointsTarget,
@@ -31,12 +31,12 @@ class ProfileCubit extends Cubit<ProfileState> {
   }
 
   void setStepsTarget(int stepsGoal) {
-    profileDataRepo.setStepsGoal(stepsGoal);
+    profileDataRepository.setStepsGoal(stepsGoal);
     emit((state as ProfileState$Successful).copyWith(stepsTarget: stepsGoal));
   }
 
   void setCardioPointsTarget(int cardioPointsGoal) {
-    profileDataRepo.setCardioPointsGoal(cardioPointsGoal);
+    profileDataRepository.setCardioPointsGoal(cardioPointsGoal);
     emit((state as ProfileState$Successful).copyWith(cardioPointsTarget: cardioPointsGoal));
   }
 
@@ -47,18 +47,18 @@ class ProfileCubit extends Cubit<ProfileState> {
             NotificationService.activateTimeToSleepNotifications((state as ProfileState$Successful).timeToSleep),
           }
         : NotificationService.deactivateSleepingModeNotifications();
-    profileDataRepo.setSleepingModeIsActive(isActivate);
+    profileDataRepository.setSleepingModeIsActive(isActivate);
     emit((state as ProfileState$Successful).copyWith(isSleepingModeActive: isActivate));
   }
 
   void setWakeUpTime(TimeOfDay wakeUpTime) {
-    profileDataRepo.setWakeUpTime(wakeUpTime);
+    profileDataRepository.setWakeUpTime(wakeUpTime);
     NotificationService.activateWakeUpNotifications(wakeUpTime);
     emit((state as ProfileState$Successful).copyWith(wakeUpTime: wakeUpTime));
   }
 
   void setTimeToSleep(TimeOfDay timeToSleep) {
-    profileDataRepo.setTimeToSleep(timeToSleep);
+    profileDataRepository.setTimeToSleep(timeToSleep);
     NotificationService.activateTimeToSleepNotifications(timeToSleep);
     emit((state as ProfileState$Successful).copyWith(timeToSleep: timeToSleep));
   }

@@ -8,14 +8,14 @@ import 'package:stepel_flutter/core/utils/date_time_utils.dart';
 import 'package:stepel_flutter/feature/home/presentation/bloc/home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  final IFitDataRepository fitDataRepo;
-  final IProfileDataRepository profileDataRepo;
+  final IFitDataRepository fitDataRepository;
+  final IProfileDataRepository profileDataRepository;
   late StreamSubscription _fitDataUpdateSubscription;
   late StreamSubscription _profileDataSubscription;
 
   HomeCubit({
-    required this.fitDataRepo,
-    required this.profileDataRepo,
+    required this.fitDataRepository,
+    required this.profileDataRepository,
   }) : super(const HomeState.idle());
 
   void init() async {
@@ -24,13 +24,13 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void initSubscriptions() {
-    _fitDataUpdateSubscription = fitDataRepo.fitDataStream.listen((event) {
+    _fitDataUpdateSubscription = fitDataRepository.fitDataStream.listen((event) {
       if (state is HomeState$Successful) {
         emit((state as HomeState$Successful).copyWith(fitData: event));
       }
     });
 
-    _profileDataSubscription = profileDataRepo.profileDataUpdates.listen((event) {
+    _profileDataSubscription = profileDataRepository.profileDataUpdates.listen((event) {
       switch (event.updatedField) {
         case ProfileDataField.stepTarget:
           if (state is HomeState$Successful) {
@@ -52,11 +52,11 @@ class HomeCubit extends Cubit<HomeState> {
 
       final currentDate = DateTimeUtils.getCurrentFormattedDate();
 
-      var fitData = await fitDataRepo.getFitData(currentDate);
+      var fitData = await fitDataRepository.getFitData(currentDate);
 
-      var cardioPointsTarget = await profileDataRepo.getCardioPointsGoal(currentDate);
-      var stepTarget = await profileDataRepo.getStepsGoal(currentDate);
-      var weeklyFitData = await fitDataRepo.getWeeklyFitData();
+      var cardioPointsTarget = await profileDataRepository.getCardioPointsGoal(currentDate);
+      var stepTarget = await profileDataRepository.getStepsGoal(currentDate);
+      var weeklyFitData = await fitDataRepository.getWeeklyFitData();
 
       emit(HomeState.successful(
         fitData: fitData,

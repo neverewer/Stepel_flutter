@@ -4,7 +4,7 @@ import 'package:pedometer/pedometer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stepel_flutter/core/db/daos/steps_dao.dart';
 import 'package:stepel_flutter/core/db/database.dart';
-import 'package:stepel_flutter/core/dependencies/repositories/local_storage.dart';
+import 'package:stepel_flutter/core/local_storage/local_storage.dart';
 import 'package:stepel_flutter/core/utils/date_time_utils.dart';
 
 class PedometrServiceBackground {

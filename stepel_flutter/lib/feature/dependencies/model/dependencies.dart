@@ -1,5 +1,5 @@
 import 'package:stepel_flutter/core/db/database.dart';
-import 'package:stepel_flutter/core/dependencies/repositories/local_storage.dart';
+import 'package:stepel_flutter/core/local_storage/local_storage.dart';
 import 'package:stepel_flutter/core/domain/repositories/fit_data_repository.dart';
 import 'package:stepel_flutter/core/domain/repositories/profile_data_repository.dart';
 

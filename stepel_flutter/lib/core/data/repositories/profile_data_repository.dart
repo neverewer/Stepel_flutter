@@ -5,7 +5,7 @@ import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:stepel_flutter/core/db/daos/cardio_points_goal_dao.dart';
 import 'package:stepel_flutter/core/db/daos/steps_goal_dao.dart';
 import 'package:stepel_flutter/core/db/database.dart';
-import 'package:stepel_flutter/core/dependencies/repositories/local_storage.dart';
+import 'package:stepel_flutter/core/local_storage/local_storage.dart';
 import 'package:stepel_flutter/core/domain/repositories/profile_data_repository.dart';
 import 'package:stepel_flutter/core/models/profile_data_update_event.dart';
 import 'package:stepel_flutter/core/utils/date_time_utils.dart';
@@ -75,8 +75,8 @@ class ProfileDataRepositoryImpl extends IProfileDataRepository {
 
   @override
   Future<TimeOfDay> getWakeUpTime() async {
-    var wakeUpTimeHours = localStorage.getWakeUpTimeHours();
-    var wakeUpTimeMinutes = localStorage.getWakeUpTimeMinutes();
+    var wakeUpTimeHours = localStorage.getWakeUpTimeHours() ?? 7;
+    var wakeUpTimeMinutes = localStorage.getWakeUpTimeMinutes() ?? 0;
     return TimeOfDay(hour: wakeUpTimeHours, minute: wakeUpTimeMinutes);
   }
 
@@ -88,8 +88,8 @@ class ProfileDataRepositoryImpl extends IProfileDataRepository {
 
   @override
   Future<TimeOfDay> getTimeToSleep() async {
-    var timeToSleepHours = localStorage.getTimeToSleepHours();
-    var timeToSleepMinutes = localStorage.getTimeToSleepMinutes();
+    var timeToSleepHours = localStorage.getTimeToSleepHours() ?? 22;
+    var timeToSleepMinutes = localStorage.getTimeToSleepMinutes() ?? 0;
     return TimeOfDay(hour: timeToSleepHours, minute: timeToSleepMinutes);
   }
 
